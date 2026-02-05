@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Aliyah Amaliani | Secure Frontend Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <div class="power-control">
+        <div class="power-label">SYSTEM POWER</div>
+        <label class="switch-container">
+            <input type="checkbox" id="main-power-switch">
+            <div class="switch-body">
+                <div class="switch-handle"></div>
+            </div>
+            <div class="led-indicator" id="system-led"></div>
+        </label>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="screw"></span>
+            <span class="brand-text">ERIKA.SYS</span>
+            <span class="screw"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-item">LOGS</a></li>
+            <li><a href="#skills" class="nav-item">MODULES</a></li>
+            <li><a href="#projects" class="nav-item">PROJECTS</a></li>
+            <li><a href="#contact" class="nav-item">TRANSMIT</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge-status">
+                    <span class="status-dot"></span>
+                    SYSTEM OPERATIONAL
+                </div>
+                <h1 class="hero-title">SECURE<br>FRONTEND<br>ENGINEER</h1>
+                <p class="hero-desc">
+                    Membangun antarmuka web modern dengan standar keamanan siber yang ketat. 
+                    Menggabungkan estetika visual dengan ketahanan jaringan.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">INITIATE PROJECTS</a>
+                    <a href="#contact" class="btn btn-secondary">CONTACT DATA</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="device-casing">
+                    <div class="device-screen">
+                        <div class="scanlines"></div>
+                        <div class="terminal-content">
+                            <span class="cmd">> user: Nur Aliyah Amaliani</span>
+                            <span class="cmd">> role: Lab Assistant</span>
+                            <span class="cmd">> executing: network_test.sh</span>
+                            <span class="success">[OK] Port Scanning...</span>
+                            <span class="success">[OK] Database Encrypted...</span>
+                            <span class="warning">[!] Vulnerability Check...</span>
+                            <span class="blink">_</span>
+                        </div>
+                    </div>
+                    <div class="device-controls">
+                        <div class="control-btn"></div>
+                        <div class="control-btn"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-panel">
+            <div class="panel-header">
+                <h2 class="section-title">SYSTEM LOGS // EXPERIENCE</h2>
+                <div class="vents">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card profile-card">
+                    <div class="card-screw tl"></div><div class="card-screw tr"></div>
+                    <div class="card-screw bl"></div><div class="card-screw br"></div>
+                    
+                    <div class="profile-img-container">
+                        <img src="WhatsApp Image 2026-02-05 at 02.58.45.jpeg" alt="Nur Aliyah Amaliani" class="profile-img"> 
+                    </div>
+                    
+                    <h3 class="card-title">NUR ALIYAH AMALIANI</h3>
+                    <p class="card-subtitle">Asisten Laboratorium & Programmer</p>
+                    <p class="card-text">
+                        Mahasiswa Informatika Semester 5 Universitas Muhammadiyah Makassar. Fokus pada pengembangan sistem berbasis web dan pengujian keamanan jaringan (Cyber Security).
+                    </p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="date-badge">2023 - SEKARANG</span>
+                            <h3 class="job-title">Asisten Laboratorium & Project Dev</h3>
+                            <ul class="job-desc">
+                                <li>Membimbing praktikum Struktur Data & Strategi Simulasi.</li>
+                                <li>Melakukan simulasi keamanan: Passive & Active Recon, DDoS.</li>
+                                <li>Mengembangkan sistem informasi untuk kebutuhan akademik.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content card">
+                            <span class="date-badge">PENDIDIKAN</span>
+                            <h3 class="job-title">S1 Informatika</h3>
+                            <p class="institution">Universitas Muhammadiyah Makassar</p>
+                            <p class="edu-desc">Alumni SMKN 3 Bulukumba (Teknik Komputer & Jaringan).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-panel">
+            <div class="panel-header">
+                <h2 class="section-title">ACTIVE MODULES // SKILLS</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="card skill-card">
+                    <div class="skill-icon"><i data-lucide="shield-alert"></i></div>
+                    <h3>CYBER SECURITY</h3>
+                    <p>Network Testing, Reconnaissance, Vulnerability Analysis</p>
+                    <div class="progress-bar"><div class="fill" style="width: 85%"></div></div>
+                    
+                    <div class="skill-links">
+                        <a href="https://youtu.be/ZRJI9QTvlxY" target="_blank" class="tech-link">
+                            <i data-lucide="youtube"></i> WATCH DEMO
+                        </a>
+                        <a href="https://github.com/aliyah0231/Tugas-MID-Penetration-Testing-I_5-JkB.git" target="_blank" class="tech-link">
+                            <i data-lucide="github"></i> TOOLS REPO
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card skill-card">
+                    <div class="skill-icon"><i data-lucide="code"></i></div>
+                    <h3>WEB DEVELOPMENT</h3>
+                    <p>HTML, CSS, Native JS, Responsive Design</p>
+                    <div class="progress-bar"><div class="fill" style="width: 90%"></div></div>
+                    
+                    <div class="skill-links">
+                        <a href="https://youtu.be/rAhnPcjxn54?si=9SJ2OUgXSzmlR5UP" target="_blank" class="tech-link">
+                            <i data-lucide="github"></i> VIEW CODEBASE
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="skill-icon"><i data-lucide="database"></i></div>
+                    <h3>DATABASE</h3>
+                    <p>MySQL Management, Data Structuring</p>
+                    <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+
+                    <div class="skill-links">
+                        <a href="#" class="tech-link">
+                            <i data-lucide="file-json"></i> SCHEMA LOGS
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card skill-card">
+                    <div class="skill-icon"><i data-lucide="cpu"></i></div>
+                    <h3>SOFT SKILLS</h3>
+                    <p>Problem Solving, Team Leadership, Tech Analysis</p>
+                    <div class="progress-bar"><div class="fill" style="width: 95%"></div></div>
+
+                    <div class="skill-links">
+                        <a href="https://youtu.be/0RPkcS1nKf4?si=6OW0eEsTKhBr0XqS" target="_blank" class="tech-link">
+                            <i data-lucide="linkedin"></i> VERIFY PROFILE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-panel">
+            <div class="panel-header">
+                <h2 class="section-title">DEPLOYED UNITS // PROJECTS</h2>
+                <div class="vents"><span></span><span></span><span></span></div>
+            </div>
+
+            <div class="projects-grid">
+                <div class="card project-card">
+                    <div class="card-screw tl"></div><div class="card-screw tr"></div>
+                    <div class="project-preview">
+                        <div class="preview-placeholder">
+                            <i data-lucide="activity" size="48"></i>
+                            <span>SIMULASI JARINGAN</span>
+                        </div>
+                        </div>
+                    <div class="project-body">
+                        <span class="project-tag">SECURITY</span>
+                        <h3>Analisis Keamanan Jaringan</h3>
+                        <p>Simulasi serangan DDoS dan pengujian kerentanan menggunakan metode Passive & Active Reconnaissance pada lingkungan pengujian.</p>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-screw tl"></div><div class="card-screw tr"></div>
+                    <div class="project-preview">
+                        <div class="preview-placeholder">
+                            <i data-lucide="library" size="48"></i>
+                            <span>SI PERPUSTAKAAN</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag">WEB APP</span>
+                        <h3>Sistem Informasi Perpustakaan</h3>
+                        <p>Aplikasi manajemen buku dan peminjaman berbasis web. Fitur lengkap CRUD dengan integrasi database MySQL.</p>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-screw tl"></div><div class="card-screw tr"></div>
+                    <div class="project-preview">
+                        <div class="preview-placeholder">
+                            <i data-lucide="stethoscope" size="48"></i>
+                            <span>SISTEM PAKAR</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-tag">AI / HEALTH</span>
+                        <h3>Diagnosa Awal Diabetes</h3>
+                        <p>Sistem pakar untuk mendeteksi gejala awal diabetes dan analisis tingkat depresi. Proyek kelompok perkuliahan.</p>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-sm">VIEW DETAILS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-panel contact-section">
+            <div class="card contact-card">
+                <div class="card-screw tl"></div><div class="card-screw tr"></div>
+                <div class="card-screw bl"></div><div class="card-screw br"></div>
+                
+                <h2 class="section-title text-center">INITIATE TRANSMISSION</h2>
+                <p class="contact-desc">Ready to collaborate on secure web systems.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:nuraliyahamaliani@gmail.com" class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <span>nuraliyahamaliani@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nur-aliyah-amaliani" target="_blank" class="contact-item">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/aliyah0231" target="_blank" class="contact-item">
+                        <i data-lucide="github"></i>
+                        <span>aliyah0231</span>
+                    </a>
+                </div>
+
+                <div class="action-area">
+                    <a href="https://wa.me/6288704553890" class="btn btn-primary btn-lg">
+                        <i data-lucide="message-square"></i> WHATSAPP ME
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>SYSTEM STATUS: ONLINE // © 2025 NUR ALIYAH AMALIANI</p>
+        <p class="footer-sub">SECURE FRONTEND ENGINEER</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
