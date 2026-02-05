@@ -1,4 +1,6 @@
-/* --- 1. VARIABLES (DESIGN TOKENS) --- */
+/* =========================================
+   1. VARIABLES (DESIGN TOKENS)
+   ========================================= */
 :root {
     /* Colors - Industrial Palette */
     --bg-chassis: #e0e5ec;
@@ -23,21 +25,22 @@
     --font-tech: 'JetBrains Mono', monospace;
 }
 
-/* --- 2. RESET & BASE --- */
+/* =========================================
+   2. RESET & BASE STYLES
+   ========================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-chassis);
     color: var(--text-primary);
     font-family: var(--font-primary);
-    /* Font dasar diperbesar agar lebih jelas */
-    font-size: 17px; 
+    font-size: 17px; /* Ukuran font dasar diperbesar */
     line-height: 1.7;
     overflow-x: hidden;
     transition: filter 0.5s ease;
 }
 
-/* Power Off State Class */
+/* Power Off State (Dikendalikan JS) */
 body.system-off {
     filter: grayscale(100%) brightness(0.8);
     pointer-events: none;
@@ -49,7 +52,7 @@ body.system-off .power-control {
     filter: none;
 }
 
-/* Texture Overlay */
+/* Texture Overlay (Efek Plastik Matte) */
 .noise-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -59,14 +62,16 @@ body.system-off .power-control {
     z-index: 999;
 }
 
-/* --- 3. COMPONENTS --- */
+/* =========================================
+   3. COMPONENTS
+   ========================================= */
 
-/* Buttons */
+/* Buttons General */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2.5rem; /* Padding lebih lebar */
+    padding: 1rem 2rem;
     border-radius: 12px;
     background: var(--bg-chassis);
     color: var(--accent);
@@ -79,6 +84,7 @@ body.system-off .power-control {
     transition: all 0.2s ease;
     gap: 0.5rem;
     border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -97,12 +103,23 @@ body.system-off .power-control {
     border: 1px solid var(--accent);
 }
 
+/* Secondary Button (GitHub Style) */
 .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-shadow);
+    color: var(--text-muted);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background: var(--bg-panel);
     color: var(--text-primary);
+    border-color: var(--text-primary);
+    box-shadow: var(--shadow-base);
 }
 
 .btn-sm {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     font-size: 0.85rem;
 }
 
@@ -110,14 +127,14 @@ body.system-off .power-control {
 .card {
     background: var(--bg-chassis);
     border-radius: 20px;
-    padding: 2.5rem; /* Padding card diperbesar */
+    padding: 2.5rem;
     box-shadow: var(--shadow-base);
     position: relative;
     border: 1px solid rgba(255,255,255,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Screws */
+/* Industrial Screws */
 .card-screw {
     width: 14px; height: 14px;
     position: absolute;
@@ -132,7 +149,7 @@ body.system-off .power-control {
 .bl { bottom: 15px; left: 15px; }
 .br { bottom: 15px; right: 15px; }
 
-/* Vents */
+/* Vents Decoration */
 .vents { display: flex; gap: 6px; }
 .vents span {
     width: 8px; height: 28px;
@@ -141,12 +158,14 @@ body.system-off .power-control {
     box-shadow: var(--shadow-recessed);
 }
 
-/* --- 4. LAYOUT SECTIONS --- */
+/* =========================================
+   4. LAYOUT STRUCTURE
+   ========================================= */
 
-/* FULL WIDTH CONTAINER UPDATE */
+/* Main Container (Full Width Logic) */
 .container {
-    width: 92%; /* Hampir full layar */
-    max-width: 1600px; /* Batas max di layar ultra wide */
+    width: 92%;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 40px; 
 }
@@ -156,7 +175,7 @@ body.system-off .power-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%; /* Mengikuti lebar container */
+    padding: 20px 5%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -177,7 +196,7 @@ body.system-off .power-control {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px; /* Jarak menu lebih lebar */
+    gap: 40px;
 }
 
 .nav-item {
@@ -190,13 +209,17 @@ body.system-off .power-control {
 }
 .nav-item:hover { color: var(--accent); }
 
-/* Hero Section */
+/* =========================================
+   5. SECTIONS
+   ========================================= */
+
+/* --- HERO SECTION --- */
 .hero-section {
     min-height: 90vh;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Kolom seimbang */
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 6rem; /* Jarak besar antar kolom */
+    gap: 6rem;
     padding: 6rem 0;
 }
 
@@ -222,7 +245,7 @@ body.system-off .power-control {
 }
 
 .hero-title {
-    font-size: 5.5rem; /* Font SANGAT BESAR */
+    font-size: 5.5rem;
     line-height: 1.05;
     font-weight: 800;
     color: var(--text-primary);
@@ -232,7 +255,7 @@ body.system-off .power-control {
 }
 
 .hero-desc {
-    font-size: 1.25rem; /* Font deskripsi diperbesar */
+    font-size: 1.25rem;
     color: var(--text-muted);
     max-width: 600px;
     margin-bottom: 3rem;
@@ -250,10 +273,8 @@ body.system-off .power-control {
     background: #2d3436;
     padding: 20px;
     border-radius: 24px;
-    box-shadow: 
-        20px 20px 40px rgba(0,0,0,0.3),
-        -8px -8px 20px rgba(255,255,255,0.1);
-    transform: rotateY(-15deg) rotateX(5deg) scale(1.1); /* Device diperbesar */
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.3), -8px -8px 20px rgba(255,255,255,0.1);
+    transform: rotateY(-15deg) rotateX(5deg) scale(1.1);
     transition: transform 0.5s ease;
     width: 100%;
     max-width: 500px;
@@ -286,14 +307,14 @@ body.system-off .power-control {
 .warning { color: #ffa502; }
 .blink { animation: blink 1s infinite; }
 
-/* Section Styling */
+/* --- SECTION PANELS --- */
 .section-panel { padding: 8rem 0; }
 
 .panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5rem; /* Jarak header ke konten diperlebar */
+    margin-bottom: 5rem;
     border-bottom: 2px solid rgba(0,0,0,0.05);
     padding-bottom: 1.5rem;
 }
@@ -304,20 +325,18 @@ body.system-off .power-control {
     color: var(--text-muted);
 }
 
-/* About/Experience Grid */
+/* --- EXPERIENCE SECTION --- */
 .grid-2 { 
     display: grid; 
     grid-template-columns: 1fr 1.5fr; 
-    gap: 5rem; /* Gap besar */
+    gap: 5rem; 
     align-items: start;
 }
 
-.profile-card {
-    text-align: center;
-}
+.profile-card { text-align: center; }
 
 .profile-img-container {
-    width: 200px; height: 200px; /* Foto Besar */
+    width: 200px; height: 200px;
     border-radius: 50%;
     margin: 0 auto 2rem;
     overflow: hidden;
@@ -326,21 +345,13 @@ body.system-off .power-control {
 }
 .profile-img { width: 100%; height: 100%; object-fit: cover; }
 
-.card-title {
-    font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-primary);
-}
-.card-subtitle {
-    font-family: var(--font-tech); color: var(--accent); margin-bottom: 1.5rem;
-}
+.card-title { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+.card-subtitle { font-family: var(--font-tech); color: var(--accent); margin-bottom: 1.5rem; }
 
-/* Timeline */
-.timeline-item {
-    display: flex; gap: 2rem; margin-bottom: 3rem;
-}
+.timeline-item { display: flex; gap: 2rem; margin-bottom: 3rem; }
 .timeline-marker {
     width: 4px; background: var(--border-shadow);
-    position: relative;
-    border-radius: 2px;
+    position: relative; border-radius: 2px;
 }
 .timeline-marker::before {
     content: '';
@@ -363,11 +374,11 @@ body.system-off .power-control {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Skills Grid */
+/* --- SKILLS SECTION --- */
 .skills-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 3rem; /* Gap lebar */
+    gap: 3rem;
 }
 .skill-card { text-align: center; transition: transform 0.3s; }
 .skill-card:hover { transform: translateY(-10px); }
@@ -386,11 +397,11 @@ body.system-off .power-control {
 }
 .fill { height: 100%; background: var(--accent); }
 
-/* --- NEW: SKILL LINKS STYLING --- */
+/* Skill Links (Data Ports) */
 .skill-links {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px dashed rgba(0,0,0,0.1); /* Garis putus-putus industrial */
+    border-top: 1px dashed rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -401,7 +412,7 @@ body.system-off .power-control {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: var(--font-tech); /* Font monospace agar terlihat seperti kode */
+    font-family: var(--font-tech);
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--text-muted);
@@ -411,8 +422,6 @@ body.system-off .power-control {
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
-
-/* Hover Effect: Seperti tombol menyala */
 .tech-link:hover {
     color: var(--accent);
     background: rgba(255, 71, 87, 0.05);
@@ -420,23 +429,18 @@ body.system-off .power-control {
     box-shadow: 0 0 10px rgba(255, 71, 87, 0.1);
     transform: translateY(-2px);
 }
+.tech-link svg { width: 14px; height: 14px; }
 
-/* Ukuran Icon di dalam link */
-.tech-link svg {
-    width: 14px;
-    height: 14px;
-}
-
-/* Projects Grid */
+/* --- PROJECTS SECTION --- */
 .projects-grid {
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Kartu project lebar */
-    gap: 4rem; /* Gap sangat lebar */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+    gap: 4rem;
 }
 .project-card:hover { transform: translateY(-5px); }
 
 .project-preview {
-    height: 240px; /* Preview lebih tinggi */
+    height: 240px;
     background: var(--text-primary);
     border-radius: 16px;
     margin-bottom: 2rem;
@@ -457,7 +461,18 @@ body.system-off .power-control {
 }
 .project-body h3 { font-size: 1.5rem; margin: 1rem 0; }
 
-/* Contact */
+/* Project Action Buttons (Dual Buttons) */
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+.project-actions .btn {
+    flex: 1; /* Equal width */
+    padding: 0.8rem 1rem;
+}
+
+/* --- CONTACT SECTION --- */
 .contact-section { display: flex; justify-content: center; }
 .contact-card { text-align: center; max-width: 800px; width: 100%; padding: 4rem; }
 .contact-links {
@@ -470,7 +485,7 @@ body.system-off .power-control {
 }
 .contact-item:hover { color: var(--accent); transform: translateY(-5px); }
 
-/* Footer */
+/* --- FOOTER --- */
 .footer {
     text-align: center; padding: 3rem;
     font-family: var(--font-tech);
@@ -479,7 +494,9 @@ body.system-off .power-control {
     border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-/* --- POWER SWITCH STYLES --- */
+/* =========================================
+   6. POWER SWITCH (FIXED WIDGET)
+   ========================================= */
 .power-control {
     position: fixed; top: 30px; left: 30px; z-index: 1000;
     background: var(--bg-chassis);
@@ -489,9 +506,7 @@ body.system-off .power-control {
     border: 1px solid rgba(255,255,255,0.5);
 }
 .power-label { font-size: 0.7rem; font-family: var(--font-tech); color: var(--text-muted); font-weight: bold; }
-.switch-container {
-    position: relative; width: 60px; height: 30px; cursor: pointer;
-}
+.switch-container { position: relative; width: 60px; height: 30px; cursor: pointer; }
 .switch-container input { opacity: 0; width: 0; height: 0; }
 .switch-body {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -527,7 +542,9 @@ input:checked ~ .led-indicator {
 @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Mobile Responsive */
+/* =========================================
+   7. MOBILE RESPONSIVE
+   ========================================= */
 @media (max-width: 900px) {
     .container { width: 100%; padding: 0 25px; }
     
@@ -537,15 +554,15 @@ input:checked ~ .led-indicator {
         padding-top: 8rem;
         gap: 3rem;
     }
-    .hero-title { font-size: 3.5rem; } /* Font diperkecil di mobile */
+    .hero-title { font-size: 3.5rem; } 
     .hero-actions { justify-content: center; }
     
-    /* Sembunyikan visual device berat di mobile agar ringan */
+    /* Hide visual on mobile */
     .hero-visual { display: none; } 
     
     .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
     
-    /* Navbar jadi sederhana di mobile */
+    /* Navbar simplified */
     .nav-links { display: none; } 
     
     .power-control { top: 15px; left: 15px; transform: scale(0.9); }
@@ -556,4 +573,7 @@ input:checked ~ .led-indicator {
     }
     
     .section-panel { padding: 4rem 0; }
+    
+    /* Buttons stack on very small screens */
+    .project-actions { flex-wrap: wrap; }
 }
